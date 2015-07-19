@@ -99,13 +99,22 @@ public class LibraryTest {
 
         library.welcome(time);
 
-        // add a verify here
+        verify(printStream).println(contains("Welcome to the library! The current time is"));
     }
 
     @Test
     public void shouldDisplayFormattedTimeWhenFormattedTimeIsNotEmpty() {
+        List<String> books = new ArrayList<>();
+        PrintStream printStream = mock(PrintStream.class);
+        DateTime time = new DateTime();
+        DateTimeFormatter dateTimeFormatter = mock(DateTimeFormatter.class);
 
-        // implement me
-        // then move common test variables into a setup method
+        when(dateTimeFormatter.print(time)).thenReturn("4:33 PM");
+
+        Library library = new Library(books, printStream, dateTimeFormatter);
+
+        library.welcome(time);
+
+        verify(printStream).println(contains("Welcome to the library! The current time is 4:33 PM"));
     }
 }
