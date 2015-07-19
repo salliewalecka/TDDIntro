@@ -30,7 +30,6 @@ public class FactorialTests {
     }
 
     @Test
-    @Ignore // Remove each @Ignore to allow the test to run
     public void shouldReturnOneWhenNumberIsZero(){
         assertThat(factorial.compute(0), is(1));
     }
