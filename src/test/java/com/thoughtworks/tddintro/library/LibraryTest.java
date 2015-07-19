@@ -43,7 +43,18 @@ public class LibraryTest {
     @Test
     public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() {
 
-        // implement me
+        List<String> books = new ArrayList<>();
+        String title1 = "Book Title 1";
+        String title2 = "Book Title 2";
+        books.add(title1);
+        books.add(title2);
+        PrintStream printStream = mock(PrintStream.class);
+        Library library = new Library(books, printStream, null);
+
+        library.listBooks();
+
+        verify(printStream).println(contains("Book Title 1"));
+        verify(printStream).println(contains("Book Title 2"));
     }
 
     /*
