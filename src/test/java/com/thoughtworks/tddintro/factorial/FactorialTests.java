@@ -40,7 +40,6 @@ public class FactorialTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    @Ignore // Remove each @Ignore to allow the test to run
     public void shouldThrowIllegalArgumentExceptionWhenNumberIsNegative(){
         factorial.compute(-1);
     }
