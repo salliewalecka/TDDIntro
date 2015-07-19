@@ -1,10 +1,18 @@
 package com.thoughtworks.tddintro.accountbalance;
 
+import org.junit.Test;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 public class AccountTests {
-//    @Test
-//    public void shouldIncreaseMyBalanceWhenIDepositMoney(){
-//
-//    }
+
+
+    @Test
+    public void shouldIncreaseMyBalanceWhenIDepositMoney(){
+        Account account= new Account(100);
+        assertThat(account.transaction(50), is(150.0));
+    }
 //
 //    @Test
 //    public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
