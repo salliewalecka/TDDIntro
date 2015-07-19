@@ -13,7 +13,9 @@ public class Account {
     }
 
     public double transaction(double amount){
-        balance= balance+amount;
+        if(balance+amount>0) {
+            balance = balance + amount;
+        }
         return balance;
     }
 
