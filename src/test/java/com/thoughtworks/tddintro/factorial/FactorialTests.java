@@ -20,7 +20,6 @@ public class FactorialTests {
     private final Factorial factorial = new Factorial();
 
     @Test // Make me pass first
-    @Ignore // Remove each @Ignore to allow the test to run
     public void shouldReturnOneWhenNumberIsOne(){
         assertThat(new Factorial().compute(1), is(1));
     }
